@@ -8,7 +8,7 @@ const acc = document.getElementsByClassName("accordion");
                 sub.style.display = 'grid';
                 document.getElementById(this.id).innerHTML = 'Show Less';
                 
-                console.log("shalom is here" + this.id);
+                
             }
             else{
                 sub.style.display = 'none';
