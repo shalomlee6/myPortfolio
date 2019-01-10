@@ -1,0 +1,1008 @@
+
+/* CSS Variables */
+
+ /* any variables that we create here we can use anywhere through our project
+    Each variable is prefix with a '--' */
+:root{
+    --primary:     rgb(222,255,123);
+    --secondery:   rgb(206, 255, 123);
+    --background:  rgb(49,48,49);
+    --button:      rgb(107,158,222);
+    --project:     rgb(165,138,57);
+    --ios:         rgb(38,250,124);
+    --ios-light:   rgb(0,176,240);
+    --logo-red:    rgb(229,27,35);
+    --vivid-red:   rgb(217,29,58);
+    --game-dev:    rgb(1,168,158);
+    --android:     rgb(255,236,58);
+    --android-dev: rgb(251, 169, 157);
+    --web-dev:     rgb(189,203,212);
+    --dark:        #333;
+    --light:       #fff;
+    --shadow:   0 1px 5px rgba(104,104,104,0.8);
+}
+
+/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+html{
+    /* box-sizing -->  if we do any paddings it wont effect the width of the element */
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--light);
+}
+
+body {
+    background: var(--background);
+    margin: auto;
+    align-items: center;
+    line-height: 1.4;
+}
+
+img{
+    max-width: 100%;
+}
+
+.wrapper{
+    display: grid;
+    grid-gap: 10px;
+}
+/* Navigation */
+.main-nav{
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 2;
+}
+
+.main-nav ul{
+    display: grid;
+    grid-gap: 20px;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(4,1fr);
+}
+
+/* style each link */
+.main-nav a{
+    background: var(--dark);
+    display: block;
+    text-decoration: none;
+    padding: 0.8rem;
+    text-align: center;
+    color: var(--light);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow);
+}
+
+.main-nav a:hover{
+    background: var(--secondery);
+    color: var(--background);
+}
+.main-nav > ul > li > .icon{
+    display: none;
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+.img-container{
+    display: inline-grid;
+    margin: 30px auto;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+#mario{
+    margin: auto;
+}
+#toad{
+    margin: auto 20px;
+}
+#batman{
+    margin: auto;
+}
+/* Top Container */
+.top-container{
+    margin: 80px 0px 0px 0px;
+}
+.top-container header{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Timeline */
+.timeline img {
+    margin: 0 auto;
+}
+
+/* Profile Info */
+.profile-info{
+    display: grid;
+    /* margin: -40px 0px 0px 0px; */
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+     
+}
+.profile-info img{
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+
+/* Portfolio */
+.portfolio{
+    display: grid;
+    /* align-content: space-around;
+    align-content: space-between; */
+    grid-template-columns: repeat(auto-fill,55%);
+    padding-top: 80px;
+    grid-gap: 50px;
+    justify-content: center;
+   
+
+}
+
+
+.post{
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    color: black;
+    background: var(--ios);
+    margin-bottom: 0;
+    font-size: 1.6rem;
+    /* border-style: solid;
+    border-width: medium; */
+    
+}
+
+
+.post > ul{
+
+    height: 100%;                     /* take height of parent element*/
+    width: 100%;                      /* take width of parent element*/
+    margin: auto;
+    margin-bottom: 0;
+    list-style-type: none;
+    padding-left: 0;                  /* remove default UL padding */
+    display: flex;
+    flex-direction: column;
+    /* background: var(--background); */
+        /* horizontal alignment (applies to child elements) */
+    /* align-items: center;  */
+    /* padding:0; 
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content:center;     */
+    /* align-items: center;
+    list-style: none; */
+    /* min-width: 50px; */
+    
+}
+.post > ul > li{
+    line-height: 1.5;
+    
+    
+}
+
+/* Style Each Post */
+/* By Id */
+/* IOS POST */
+#ios-post{
+    background: var(--ios);
+    font-weight: 500;
+    /* font-size: 1.6rem; */
+    font-family: 'Gamja Flower', cursive;
+
+}
+
+#ios-sub-post > .project-wrapper{
+    display: grid;
+    
+    /* flex: 1 auto auto; */
+    background: var(--background);
+    /* color: var(--background); */
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.5em;
+    grid-template-areas: 
+        'project  project'
+        'description ios-screenshot'
+        'description linker'
+        'description-details linker';
+        
+    grid-template-columns: 60% 39%;
+}
+
+#ios-sub-post > .project-wrapper > .description p{
+    background: var(--ios);
+    font-weight: bold;
+    font-size: 1.5rem;
+    /* line-height: 2.5rem; */
+    color: black
+}
+
+#ios-sub-post > .project-wrapper > .project{
+    background: var(--ios-light);
+    font-size: 1.6rem;
+}
+#ios-sub-post > .project-wrapper > .description-details{
+    background: var(--ios-light);
+    color: var(--ios-light);
+    border: 0;
+    
+}
+
+#ios-sub-post > .project-wrapper > .linker{
+    display: grid;
+    justify-content: center;
+    background: var(--ios);
+    
+}
+#ios-sub-post > .project-wrapper > .linker > a h4{
+    margin: 0;
+}
+.ios-screenshot{
+    grid-template-areas: screenshot;
+    border-style: solid;
+    color: var(--ios);
+    border-width: 12px;
+    height: fit-content;
+}
+
+.wordswipe-Slides .numbertext{
+    color: black;
+    text-align: center;
+    margin-top: 0;
+}
+
+/* Game Development POST */
+
+#game-dev-post{
+    background: var(--ios-light);
+    /* font-weight: 500; */
+    font-family: 'Permanent Marker', cursive;
+}
+
+
+#game-dev-sub-post > .project-wrapper > .project{
+    background: var(--game-dev);
+}
+
+#game-dev-sub-post > .project-wrapper > .description{
+    background: var(--ios-light);
+}
+
+#game-dev-sub-post > .project-wrapper > .description-details{
+    color: var(--ios-light);
+    height: auto;
+}
+
+#game-dev-sub-post > .project-wrapper > .linker{
+    background: var(--ios-light);
+}
+#game-dev-sub-post > .project-wrapper > .linker > a h4{
+    margin: 0;
+}
+
+/* Android POST */
+#android-post{
+    color: #A4C639 ;
+    background: var(--vivid-red);
+}
+/* #android-post > ul > li{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+} */
+
+.android-head{
+    display: flex;                  /* establish flex container */
+    flex-direction: row;            /* default value; can be omitted */
+    flex-wrap: nowrap;              /* default value; can be omitted */
+    justify-content: space-between; /* switched from default (flex-start, see below) */
+    
+}
+
+
+#android-post > ul >li > .android-head > #crown-start{
+    color: var(--android); 
+    float: left;
+    /* order: flex-start; */
+    /* justify-content: flex-start; */
+}
+
+#android-post > ul >li > .android-head > h3{
+    justify-content: center;
+    font-weight: bold;
+    /* font-size: 1.6rem; */
+    font-family: 'Staatliches', cursive;
+    color: #000;
+
+}
+
+#android-post > ul >li > .android-head > #crown-end{
+    color: var(--android);
+    float: right; 
+}
+
+#android-sub-post > .project-wrapper{
+    display: grid;
+    
+    /* flex: 1 auto auto; */
+    background: var(--background);
+    /* color: var(--background); */
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.5em;
+    grid-template-areas: 
+        'project  project'
+        'description android-screenshot'
+        'description linker'
+        'description-details linker';
+        
+    grid-template-columns: 60% 39%;
+}
+
+.android-screenshot{
+    grid-template-areas: android-screenshot;
+    /* border-style: solid;
+    color: var(--android);
+    border-width: 12px; */
+    height: fit-content;
+}
+
+
+#android-sub-post > .project-wrapper > .project{
+    background: var(--android);
+}
+
+#android-sub-post > .project-wrapper > .description{
+    background: var(--android);
+    color: black;
+}
+#android-sub-post > .project-wrapper > .description p{
+    font-weight: bold;
+    font-size: 1.3rem;
+    
+}
+
+#android-sub-post > .project-wrapper > .description-details{
+    color: var(--android);
+}
+
+#android-sub-post > .project-wrapper > .linker{
+    display: grid;
+    justify-content: center;
+    background: var(--android);
+    color: black;
+
+}
+
+#android-sub-post > .project-wrapper > .linker a{
+    display: grid;
+    justify-content: center;
+    color: #4267b2;
+    
+}
+
+/* Web Development POST */
+#web-dev{
+    background: var(--android-dev);
+    font-family: 'Lobster', cursive;
+}
+
+#web-dev-sub-post > .project-wrapper > .project {
+    background: var(--web-dev);
+}
+
+#web-dev-sub-post > .project-wrapper > .description{
+    display: grid;
+    grid-template-columns: 'p p' 'img img';
+    background: var(--android-dev);
+}
+
+#web-dev-sub-post > .project-wrapper > .description img{
+    justify-content: center;
+    margin: 0 auto;
+
+}
+
+#web-dev-sub-post > .project-wrapper > .description p{
+    font-family: 'Bitter', serif;
+    /* font-weight: bold; */
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+#web-dev-sub-post > .project-wrapper > .description-details{
+    color: var(--android-dev);
+}
+
+#web-dev-sub-post > .project-wrapper > .linker  {
+    display: grid;
+    justify-content: center;
+    background: var(--android-dev);
+}
+
+#web-dev-sub-post > .project-wrapper > .linker h4{
+    margin: auto;
+}
+#web-dev-sub-post > .project-wrapper > .linker > .front-ico{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0px auto;
+}
+
+#web-dev-sub-post > .project-wrapper > .linker > .back-ico{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+}
+.tags{
+    display: flex;
+    justify-content: space-around;
+    color: var(--background);
+    font-size: 1.6em;
+}
+
+
+button.accordion {
+    background: var(--background);
+    color: var(--light);
+    cursor: pointer;
+    border: 0px;
+    padding: 18px;
+	margin: 10px 0;
+    font-size: 18px;
+    transition: .8s;
+}
+
+button:focus{
+    outline: none;
+}
+
+button.accordion.active, button.accordion:hover{
+    background: var(--button);
+}
+
+.sub-post {
+    flex-direction: row;
+    display: none;
+    grid-gap: 25px;
+    background: #fff;  
+    background: var(--background);
+    margin: 20px auto 0px auto ;
+    transition: max-height .2s ease-out;
+}
+
+.post > ul > li{
+    width: 100%;
+}
+
+.project-wrapper{
+    display: grid;
+    
+    /* flex: 1 auto auto; */
+    background: var(--background);
+    /* color: var(--background); */
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.5em;
+    grid-template-areas: 
+        'project  project'
+        'description description-details'
+        'description description-details'
+        'description linker';
+    grid-template-columns: 60% 39%;
+    
+}
+
+/* Project */
+.project{
+    /* assign the grid area to project */
+    grid-area: project;
+    /* display: flex;
+    flex-direction: column; */
+    align-items: center;
+    padding: 1rem;
+    /* border-style: solid;
+    border-width: medium; */
+    border: 2px solid #000;
+    background: var(--ios-light);
+}
+
+.project h1{
+    /* margin-bottom: 0; */
+    position: relative;
+    margin: 0 auto;
+    color: var(--background);
+}
+
+.linker{
+    grid-area: linker;
+    display: flex;
+    flex-flow: column;
+    /* margin-bottom: 0; */
+    /* display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-style: var(--project);
+    border-width: medium; */
+
+    color: var(--background);
+    background: var(--ios);
+    
+}
+.linker a{
+    cursor: default;
+    margin: auto;
+}
+#git{
+    cursor: pointer;
+}
+
+
+/* TODO => change font style */
+
+
+.description{
+    grid-area: description;
+    text-align: left;
+    background: var(--ios);
+    padding: 1.1rem;
+    font-size: 1rem;
+    font-style: oblique;
+    /* border-style: solid;
+    border-style: var(--project);
+    border-width: medium; */
+    
+}
+.description-details{
+    grid-area: description-details;
+
+    
+    
+    /* Setting the position to relative lets me use absolute positioning for the iframe itself. */
+    position: relative;
+    
+    
+    /* The padding-bottom value is calculated out of the aspect ratio of the ppt. In this case, 
+    the aspect ratio is 16:9, which means that the height will be 56.25% of the width. For a ppt
+    with a 4:3 aspect ratio, i will set padding-bottom to 75%. */
+    padding-bottom: 56.25%;  
+
+
+    /* The padding-top value is set to 30 pixels to allow space for the chrome — this is specific to YouTube videos. */
+    padding-top: 35px; 
+
+
+    /* The height is set to 0 because padding-bottom gives the element the height it needs. 
+    We do not set the width because it will automatically resize with the responsive element
+    that contains this div. */
+    height: 0;
+
+    /* Setting overflow to hidden ensures that any content protruding outside of this element will be hidden from view. */
+    overflow: hidden;
+
+    border-style: solid;
+    color: var(--ios);
+    border-width: 12px;
+    
+}
+
+
+.description-details iframe{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* border-style: solid;
+    border-style: var(--project);
+    border-width: medium; */
+}
+
+/* Slideshow container */
+.slideshow-container {
+    /* max-width: 1000px; */
+    position: relative;
+    margin: auto;
+    color: var(--android-dev);
+    
+    
+}
+
+.slideshow-container img{
+    max-width:100%;
+    max-height:100%;
+    
+}
+
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev{
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    top: 0;
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+  
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+/* About Me */
+.info{
+    /* display: inline-grid; */
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    height: 300px;
+    grid-template-areas: 'img info-p';
+    justify-content: flex-start;
+    /* margin: auto; */
+    padding: 60px 0px 60px 0px;
+    margin-top: 60px;
+    grid-gap: 60px;
+    background-attachment: fixed;
+    background-position: center;
+    background-origin: content-box;
+    background-image: url("../assets/img/11.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    color: black;
+}
+.info-p{
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.6em;
+    color: white;
+    margin: 20px;
+
+}
+.info-p h2{
+    /* color: var(--ios); */
+    text-decoration-line: underline;
+    font-family: 'Staatliches', cursive;
+}
+.info-p-ok{
+    color: var(--ios);
+}
+.info-p-not-ok{
+    color: var(--vivid-red);
+}
+.info-p-mark{
+    text-decoration-line: underline;
+}
+.spiderman{
+    display: flex;
+    justify-content: center;
+    margin-top: 400px;
+}
+
+.spiderman-popup{
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    transition: .5s ease;
+}
+.spiderman:hover .spiderman-popup{
+    opacity: 1;
+}
+
+
+/* Footer */
+footer{
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1rem;
+}
+footer img{
+    width: 100px;
+    height: 100px;
+}
+.contact-me{
+    display: grid;
+    grid-template-areas: 'img h2';
+    justify-content: center;
+}
+.contact-me img{
+    width: 50px;
+    height: 50px;
+}
+.contact-me h2{
+    margin: 8px 72px 0px 20px;
+}
+
+.social-icons{
+    
+    display: grid;
+    grid-gap: 40px;
+    margin: 25px auto;
+    width: fit-content;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Icons Brand Colors */
+
+#linked-in{
+    color: #0077B5;
+}
+#facebook{
+    color: #4267b2;
+}
+#html{
+    color: #e34f26;
+}
+#css{
+    color: #002561;
+}
+#php{
+    color: #8892be;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+  
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Media Queries */
+@media(max-width: 700px) {
+
+    body {
+        background: var(--background);
+        margin: 10px 20px;
+        align-items: center;
+        line-height: 1.4;
+    }
+    .wrapper{
+        display: flex;
+        
+        flex-direction: column;
+        align-items: center;
+        grid-gap: 10px;
+    }
+    .main-nav > ul > li > a:not(.icon){
+        display: none;
+    }
+    .main-nav > ul{
+        margin: auto;
+    }
+
+    .main-nav > ul > li > a.icon {
+        /* float: left; */
+        position: fixed;
+        display: block;
+        top: 0;
+        left: 0;
+        
+    }
+
+    .main-nav.responsive{
+        position: fixed;
+        height: auto;
+    }
+    .main-nav.responsive > ul > li > a.icon{
+        position: fixed;
+        /* margin: auto; */
+        display: block;
+        left: 0;
+        top: 0;
+    }
+    .main-nav.responsive > ul > li > a{
+        float: none;
+        display: block;
+        text-align: center;
+        
+    }
+    .main-nav.responsive ul{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        /* grid-template-columns: 1fr; */
+        
+    }
+    .img-container{
+        display: flex;
+        flex-direction: column;
+        /* display: inline-grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr; */
+        margin: 100px auto;
+    }
+    #mario{
+        display: none;
+        /* margin: auto;
+        grid-row-start: 2;
+        grid-row-end: 3; */
+    }
+    #toad{
+        display: none;
+        /* margin: auto; */
+    }
+    #batman{
+        display: none;
+    }
+    .profile-info{
+        margin: 30px auto;
+    }
+
+
+
+    .portfolio{
+        display: grid;
+        grid-template-columns: repeat(auto-fill,100%);
+        
+    }
+    .project-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .description{
+        flex: 3;
+        order: 1;
+    }
+    .linker{
+        flex: 1;
+        order: 3;
+    }
+    .description-details{
+        flex: 2;
+        order: 2;
+    }
+    #ios-sub-post > .project-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #ios-sub-post > .project-wrapper > .description{
+        flex: 3;
+        order: 1;
+    }
+
+    #ios-sub-post > .project-wrapper > .description-details{
+        background: var(--ios-light);
+        color: var(--ios-light);
+        border: 0;
+        flex: 2;
+        order: 3;
+    }
+    
+    #ios-sub-post > .project-wrapper > .linker{
+        background: var(--ios);
+        flex: 1;
+        order: 4;
+    }
+    
+    .ios-screenshot{
+        flex: 1;
+        order: 2;
+    }
+
+    #android-sub-post > .project-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #android-sub-post > .project-wrapper > .description{
+        background: var(--android-dev);
+        color: black;
+    }
+    #android-sub-post > .project-wrapper > .description p{
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+    
+    #android-sub-post > .project-wrapper > .description-details{
+        color: var(--android-dev);
+    }
+    
+    #android-sub-post > .project-wrapper > .linker{
+        background: var(--android-dev);
+        color: black;
+    }
+    .info{
+        display: grid;
+        grid-template-areas: 'img' 'info-p';
+        margin: 50px auto;
+        
+        grid-gap: 20px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
