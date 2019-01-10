@@ -991,6 +991,11 @@ footer img{
         
         grid-gap: 20px;
     }
+    .spiderman{
+        display: flex;
+        justify-content: center;
+        margin-top: 1400px;
+    }
 
 }
 
